@@ -69,12 +69,11 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
     public void configure(WebSecurity web) throws Exception {
         web.ignoring().antMatchers("/user/login",
                 "/v2/api-docs",
-                "/swagger-ui.html",
+                "/v2/api-docs-ext",
+                "/doc.html",
                 "/webjars/**",
-                "/resources/**",
                 "/swagger-resources/**",
                 "oauth/authorize",
-                "/swagger/**",
                 "business-oauth2/**");
     }
 
