@@ -33,11 +33,13 @@
 
 ### Swagger 访问模块接口
 
-+ http://localhost:8888/swagger-ui.html
++ http://localhost:8888/doc.html
 
 + 认证
 
   + 通过/user/login 接口进行登录，获取access_token
+
+    + 走网关：http://localhost:8888/business-oauth2/user/login
 
   + 设置 `Authorization` 的 value，格式：bearer [空格] <access_token>，例如：
 
@@ -46,7 +48,7 @@
     ```
 
 
-### IDEA RunDashboard 组件
+### IDEA RunDashboard 组件（旧版本组件，新版本Services组件功能类似）
 
 导入项目，加载出.idea配置文件，目标：workspace.xml
 
