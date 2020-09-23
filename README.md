@@ -1,0 +1,48 @@
+# README
+
+### 使用前食用
+
++ 导入项目前请先配置、启动nacos
++ 导入项目前请先创建数据库[learninglibrary]，sql脚本在项目根目录
++ 有任何问题都可以随时邮箱联系我（技术问题我不一定都会）
+
+### 版本说明
+
++ java : 1.8.0_201
+
++ spring-cloud.version : Hoxton.SR3
++ spring-boot-starter-parent.version : 2.2.5.RELEASE
++ dubbo.version : 2.7.3
++ nacos-client.version : 1.1.1
++ swagger.version : 2.9.2
+
+具体其他详细版本请参照dependencies模块
+
+### 项目启动
+
++ 模块启动顺序
+  + 服务提供者
+    + ShareProviderApplication
+    + UserProviderApplication
+  + 服务消费者
+    + BusinessIndexApplication
+    + BusinessOauth2Application
+    + BusinessShareApplication
+  + 网关
+    + GatewayApplication
+
+### Swagger 访问模块接口
+
++ http://localhost:8888/swagger-ui.html
+
++ 认证
+
+  + 通过/user/login 接口进行登录，获取access_token
+
+  + 设置 `Authorization` 的 value，格式：bearer [空格] <access_token>，例如：
+
+    ```text
+    bearer 9ead55fb-138f-4e3e-b2ac-288c35ee8fa7
+    ```
+
+    
