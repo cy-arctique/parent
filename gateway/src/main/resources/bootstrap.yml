@@ -33,14 +33,3 @@ spring:
 server:
   port: 8888
 
-security:
-  oauth2:
-    client:
-      client-id: client
-      client-secret: secret
-      access-token-uri: http://localhost:9001/oauth/token
-      user-authorization-uri: http://localhost:9001/oauth/authorize
-    resource:
-      token-info-uri: http://localhost:9001/oauth/check_token
-  ignored: /swagger-resources/**,/webjars/**,/v2/**,/swagger-ui.html/**
-

@@ -42,6 +42,5 @@ public class UserDetailsServiceImpl implements UserDetailsService {
                 user.getPassword(),
                 grantedAuthorities)
                 : null;
-//        return new org.springframework.security.core.userdetails.User("admin", "123456", grantedAuthorities);
     }
 }

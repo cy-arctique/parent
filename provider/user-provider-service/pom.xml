@@ -112,7 +112,7 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
-                    <mainClass>cn.arctique.springcloud-base.user.provider.service.UserProviderApplication</mainClass>
+                    <mainClass>cn.arctique.springcloud.base.user.provider.service.UserProviderApplication</mainClass>
                 </configuration>
             </plugin>
         </plugins>

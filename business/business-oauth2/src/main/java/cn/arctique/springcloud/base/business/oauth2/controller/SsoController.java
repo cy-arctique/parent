@@ -130,8 +130,6 @@ public class SsoController {
     private String getToken(LoginParam loginParam) {
         final String URL = String.format("http://localhost:%s%s%s", PORT, name ,"/oauth/token");
 
-        log.info("[url] : {}", URL);
-
         Map<String, String> params = Maps.newHashMap();
         params.put("username", loginParam.getUsername());
         params.put("password", loginParam.getPassword());
@@ -139,8 +137,6 @@ public class SsoController {
         params.put("client_id", clientId);
         params.put("client_secret", clientSecret);
         String post = OkHttpUtil.post(URL, params);
-
-        log.info("[post] : {}", JsonUtil.toJson(post));
 
         return JsonUtil.toMap(post).get("access_token").toString();
     }

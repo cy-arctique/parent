@@ -42,8 +42,8 @@ public class SwaggerConfig {
 
     private ApiInfo info() {
         return new ApiInfoBuilder()
-                .title("学习库接口文档")
-                .contact(new Contact("arctique", "http://arctique.cn", "626165573@qq.com"))
+                .title("接口文档")
+                .contact(new Contact("arctique", "http://arctique.cn", "cy.arctique@gmail.com"))
                 .description("share module")
                 .version("1.0.0")
                 .build();
