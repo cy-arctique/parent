@@ -45,4 +45,32 @@
     bearer 9ead55fb-138f-4e3e-b2ac-288c35ee8fa7
     ```
 
-    
+
+### IDEA RunDashboard 组件
+
+导入项目，加载出.idea配置文件，目标：workspace.xml
+
++ 添加如下配置：
+
+```xml
+<component name="RunDashboard">
+    <option name="configurationTypes">
+      <set>
+        <option value="SpringBootApplicationConfigurationType" />
+      </set>
+    </option>
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+</component>
+```
+
++ 重启idea即可生效
+
