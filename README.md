@@ -20,7 +20,7 @@
 
 ### 项目模块
 ```text
-|_parent                                    总项目
+|_parent                                    root
 |___|___business                            消费者
 |_________|_________business-index          首页消费者
 |_________|_________business-oauth2         用户认证授权
