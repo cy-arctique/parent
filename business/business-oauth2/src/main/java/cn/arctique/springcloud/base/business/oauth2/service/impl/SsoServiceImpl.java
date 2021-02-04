@@ -30,7 +30,7 @@ import java.util.Map;
 @Service
 public class SsoServiceImpl implements SsoService {
 
-    private final String PORT = "8888";
+    private final String PORT = "9999";
 
     @Value("${server.servlet.context-path}")
     private String name;

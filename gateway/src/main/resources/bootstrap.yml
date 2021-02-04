@@ -29,7 +29,7 @@ spring:
     # 与 Spring Cloud 注册中心的集成，对应 DiscoveryLocatorProperties 类
     nacos:
       discovery:
-        server-addr: 192.168.147.128:8848
+        server-addr: 127.0.0.1:8848
 server:
-  port: 8888
+  port: 9999
 

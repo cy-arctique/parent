@@ -60,8 +60,8 @@ public class User implements Serializable {
     /**
      * 盐
      */
-    @ApiModelProperty(value = "盐", required = true)
-    private String salt;
+//    @ApiModelProperty(value = "盐", required = true)
+//    private String salt;
 
     /**
      * 状态
