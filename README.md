@@ -18,28 +18,55 @@
 
 具体其他详细版本请参照dependencies模块
 
+### 项目模块
+```text
+|_parent                                    总项目
+|___|___business                            消费者
+|_________|_________business-index          首页消费者
+|_________|_________business-oauth2         用户认证授权
+|_________|_________business-share          分享消费者
+|___|___common                              公共模块
+|_________|_________common-config           配置
+|_________|_________common-util             工具类
+|___|___dependencies                        依赖版本管理
+|___|___gateway                             网关配置
+|___|___provider                            服务提供者
+|_________|_________share-provider-api      分享服务提供者
+|_________|_________share-provider-service  分享服务提供者
+|_________|_________user-provider-api       用户服务提供者
+|_________|_________user-provider-service   用户服务提供者
+```
+
 ### 项目启动
 
-+ 模块启动顺序
-  + 服务提供者
-    + ShareProviderApplication
-    + UserProviderApplication
-  + 服务消费者
-    + BusinessIndexApplication
-    + BusinessOauth2Application
-    + BusinessShareApplication
-  + 网关
-    + GatewayApplication
++ ~~模块启动顺序~~
+  + ~~服务提供者~~
+    + ~~ShareProviderApplication~~
+    + ~~UserProviderApplication~~
+  + ~~服务消费者~~
+    + ~~BusinessIndexApplication~~
+    + ~~BusinessOauth2Application~~
+    + ~~BusinessShareApplication~~
+  + ~~网关~~
+    + ~~GatewayApplication~~
+
++ 配置dubbo关闭consumer自动检测provider
+```yml
+dubbo:
+  consumer:
+    check: false
+```
+**启动顺序可随意**
 
 ### Swagger 访问模块接口
 
-+ http://localhost:8888/doc.html
++ http://localhost:9999/doc.html
 
 + 认证
 
   + 通过/user/login 接口进行登录，获取access_token
 
-    + 走网关：http://localhost:8888/business-oauth2/user/login
+    + 通过访问网关：http://localhost:9999/business-oauth2/user/login
 
   + 设置 `Authorization` 的 value，格式：bearer [空格] <access_token>，例如：
 
@@ -73,6 +100,11 @@
     </option>
 </component>
 ```
+*重启idea即可生效*
 
-+ 重启idea即可生效
-
+---
+### 日志
+*2020-02-04*
++ 修改配置文件，关闭consumer自动检测provider
++ 对应修改readme相关说明
+---
