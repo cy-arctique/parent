@@ -20,6 +20,8 @@ spring:
       connection-test-query: SELECT 1
 
 dubbo:
+  consumer:
+    check: false
   scan:
     base-packages: cn.arctique.springcloud.base.user.provider.service.service
   protocol:
