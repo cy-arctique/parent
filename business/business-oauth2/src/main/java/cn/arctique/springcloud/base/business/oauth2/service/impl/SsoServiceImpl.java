@@ -56,7 +56,7 @@ public class SsoServiceImpl implements SsoService {
      * 登录
      *
      * @param loginParam
-     * @return ${@link Result}
+     * @return {@link Result}
      */
     @Override
     public Result login(LoginParam loginParam) {
@@ -76,12 +76,14 @@ public class SsoServiceImpl implements SsoService {
     /**
      * 获取登录用户信息
      *
-     * @return ${@link Result}
+     * @return {@link Result}
      */
     @Override
     public Result getInfo() {
         // 获取认证信息
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+
+        System.out.println(authentication);
 
         LoginInfo loginInfo = new LoginInfo();
         loginInfo.setUsername(authentication.getName());
@@ -93,7 +95,7 @@ public class SsoServiceImpl implements SsoService {
      * 登出
      *
      * @param request
-     * @return ${@link Result}
+     * @return {@link Result}
      */
     @Override
     public Result logout(HttpServletRequest request) {
@@ -109,7 +111,7 @@ public class SsoServiceImpl implements SsoService {
      * 获取token
      *
      * @param loginParam
-     * @return ${@link String}
+     * @return {@link String}
      */
     private String getToken(LoginParam loginParam) {
         final String URL = String.format("http://localhost:%s%s%s", PORT, name ,"/oauth/token");

@@ -36,7 +36,7 @@ public class AuthorizationServerConfiguration extends AuthorizationServerConfigu
     /**
      * access_token 的存储方式
      *
-     * @return ${@link TokenStore}
+     * @return {@link TokenStore}
      */
     @Bean
     public TokenStore tokenStore() {

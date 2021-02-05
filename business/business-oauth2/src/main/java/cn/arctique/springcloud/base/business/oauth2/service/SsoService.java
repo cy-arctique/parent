@@ -15,14 +15,14 @@ public interface SsoService {
      * 登录
      *
      * @param loginParam
-     * @return ${@link Result}
+     * @return {@link Result}
      */
     Result login(LoginParam loginParam);
 
     /**
      * 获取登录用户信息
      *
-     * @return ${@link Result}
+     * @return {@link Result}
      */
     Result getInfo();
 
@@ -30,7 +30,7 @@ public interface SsoService {
      * 登出
      *
      * @param request
-     * @return ${@link Result}
+     * @return {@link Result}
      */
     Result logout(HttpServletRequest request);
 }

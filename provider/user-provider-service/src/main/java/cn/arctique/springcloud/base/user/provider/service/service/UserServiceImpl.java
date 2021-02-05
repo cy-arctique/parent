@@ -23,7 +23,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
      * 通过用户名查找用户信息
      *
      * @param username
-     * @return ${@link User}
+     * @return {@link User}
      */
     @Override
     public User findOne(String username) {

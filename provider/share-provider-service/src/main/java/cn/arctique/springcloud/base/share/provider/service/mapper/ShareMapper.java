@@ -16,7 +16,7 @@ public interface ShareMapper extends BaseMapper<Share> {
      * 测试
      *
      * @param page
-     * @return ${@link Page<Share>}
+     * @return {@link Page<Share>}
      */
     Page<Share> findAll(Page page);
 }

@@ -42,7 +42,7 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
 
     @Override
     public void configure(ResourceServerSecurityConfigurer resources) throws Exception {
-        resources.resourceId("backend-resources");
+        resources.resourceId("oauth2-resources");
         resources.authenticationEntryPoint(authExceptionEntryPoint)
                 .accessDeniedHandler(customAccessDeniedHandler);
     }

@@ -26,7 +26,7 @@ public class SwaggerConfig {
     /**
      * login module
      *
-     * @return ${@link Docket}
+     * @return {@link Docket}
      */
     @Bean
     public Docket createRest() {

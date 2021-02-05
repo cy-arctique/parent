@@ -27,7 +27,7 @@ public class BusinessIndexController {
      * 测试接口 链接数据库 分页查找share表中的所有数据
      *
      * @param page
-     * @return ${@link Result}
+     * @return {@link Result}
      */
     @GetMapping("/findAll")
     @ApiOperation("测试读取数据库接口")
@@ -39,7 +39,7 @@ public class BusinessIndexController {
      * 测试接口 hello world
      *
      * @param string
-     * @return ${@link Result}
+     * @return {@link Result}
      */
     @GetMapping("/getString")
     @ApiOperation("测试hello world接口")

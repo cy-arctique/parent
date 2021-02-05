@@ -16,7 +16,7 @@ public interface ShareService {
      * 测试
      *
      * @param string
-     * @return ${@link String}
+     * @return {@link String}
      */
     String getString(String string);
 
@@ -24,7 +24,7 @@ public interface ShareService {
      * 测试
      *
      * @param page
-     * @return ${@link Page<Share>}
+     * @return {@link Page<Share>}
      */
     Page<Share> findAll(Page page);
 

@@ -25,6 +25,6 @@
       from
       learninglibrary.share
       where
-      share.status = 1
+      share.status = 0
     </select>
 </mapper>

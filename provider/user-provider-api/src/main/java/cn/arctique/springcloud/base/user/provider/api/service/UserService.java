@@ -14,7 +14,7 @@ public interface UserService {
      * 通过用户名查找用户信息
      *
      * @param username
-     * @return ${@link User}
+     * @return {@link User}
      */
     User findOne(String username);
 }

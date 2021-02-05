@@ -27,7 +27,7 @@ public class BusinessShareController {
      * 测试接口 hello world
      *
      * @param string
-     * @return ${@link Result}
+     * @return {@link Result}
      */
     @ApiOperation(value = "看个der1")
     @GetMapping("/getString")
@@ -40,7 +40,7 @@ public class BusinessShareController {
      * 测试接口 链接数据库 分页查找share表中的所有数据
      *
      * @param page
-     * @return ${@link Result}
+     * @return {@link Result}
      */
     @ApiOperation(value = "看个der2")
     @GetMapping("/findAll")

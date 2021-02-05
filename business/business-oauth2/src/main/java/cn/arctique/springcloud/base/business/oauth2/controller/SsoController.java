@@ -36,7 +36,7 @@ public class SsoController {
      * 登录
      *
      * @param loginParam
-     * @return ${@link Result}
+     * @return {@link Result}
      */
     @ApiOperation("登录")
     @PostMapping("/login")
@@ -47,7 +47,7 @@ public class SsoController {
     /**
      * 登录完成 获取用户信息
      *
-     * @return ${@link Result}
+     * @return {@link Result}
      */
     @ApiOperation("获取用户信息")
     @GetMapping("/info")
@@ -59,7 +59,7 @@ public class SsoController {
      * 登出
      *
      * @param request
-     * @return ${@link Result}
+     * @return {@link Result}
      */
     @ApiOperation("登出")
     @PostMapping("/logout")

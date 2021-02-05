@@ -25,7 +25,7 @@ public class SwaggerConfig {
     /**
      * share module
      *
-     * @return ${@link Docket}
+     * @return {@link Docket}
      */
     @Bean
     public Docket createRest() {

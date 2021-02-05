@@ -29,7 +29,7 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
     /**
      * 加密
      *
-     * @return ${@link BCryptPasswordEncoder}
+     * @return {@link BCryptPasswordEncoder}
      */
     @Bean
     public BCryptPasswordEncoder bCryptPasswordEncoder() {
@@ -39,7 +39,7 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
     /**
      * 用户信息
      *
-     * @return ${@link UserDetailsService}
+     * @return {@link UserDetailsService}
      * @throws Exception
      */
     @Bean
@@ -56,7 +56,7 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
     /**
      * 用于支持 password 模式
      *
-     * @return ${@link AuthenticationManager}
+     * @return {@link AuthenticationManager}
      * @throws Exception
      */
     @Bean
@@ -100,7 +100,7 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .requestMatchers()
                 .and()
                 .authorizeRequests()
-                .antMatchers("/user/info").hasAnyAuthority("USER")
+//                .antMatchers("/user/info").hasAnyAuthority("USER")
                 .antMatchers("/user/logout").hasAnyAuthority("USER")
                 .and().csrf().disable();
     }
