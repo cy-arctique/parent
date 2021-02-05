@@ -1,4 +1,4 @@
-package cn.arctique.springcloud.base.common.util;
+package cn.arctique.springcloud.base.common.util.constant;
 
 /**
  * @author arctique

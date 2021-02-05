@@ -3,7 +3,7 @@ package cn.arctique.springcloud.base.business.oauth2.service.impl;
 import cn.arctique.springcloud.base.business.oauth2.dto.LoginInfo;
 import cn.arctique.springcloud.base.business.oauth2.dto.LoginParam;
 import cn.arctique.springcloud.base.business.oauth2.service.SsoService;
-import cn.arctique.springcloud.base.common.util.CommonConstants;
+import cn.arctique.springcloud.base.common.util.constant.CommonConstants;
 import cn.arctique.springcloud.base.common.util.JsonUtil;
 import cn.arctique.springcloud.base.common.util.OkHttpUtil;
 import cn.arctique.springcloud.base.common.util.Result;
@@ -70,7 +70,7 @@ public class SsoServiceImpl implements SsoService {
         }
         return userDetails != null && bCryptPasswordEncoder.matches(loginParam.getPassword(), userDetails.getPassword())
                 ? Result.success(HttpStatus.OK.value(), "登录成功", token)
-                : Result.failure(CommonConstants.REST_FAIL, "账号/密码错误");
+                : Result.failure(CommonConstants.REST_FAIL, "账号/密码错误", null);
     }
 
     /**

@@ -1,7 +1,7 @@
 package cn.arctique.springcloud.base.business.share.controller;
 
-import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import cn.arctique.springcloud.base.common.util.Result;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import cn.arctique.springcloud.base.share.provider.api.service.ShareService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;

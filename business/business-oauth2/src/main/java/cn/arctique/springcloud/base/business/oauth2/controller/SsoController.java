@@ -1,8 +1,8 @@
 package cn.arctique.springcloud.base.business.oauth2.controller;
 
 import cn.arctique.springcloud.base.business.oauth2.service.SsoService;
-import cn.arctique.springcloud.base.common.util.Result;
 import cn.arctique.springcloud.base.business.oauth2.dto.LoginParam;
+import cn.arctique.springcloud.base.common.util.Result;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;

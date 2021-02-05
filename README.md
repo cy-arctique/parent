@@ -1,22 +1,22 @@
 # README
 
-### 使用前食用
+### 使用前说明
 
 + 导入项目前请先配置、启动nacos
 + 导入项目前请先创建数据库[learninglibrary]，sql脚本在项目根目录
-+ 有任何问题都可以随时邮箱联系我cy.arctique@gmail.com
++ 我的邮箱cy.arctique@gmail.com
 
 ### 版本说明
 
-+ java : 1.8.0_201
-
-+ spring-cloud.version : Hoxton.SR3
-+ spring-boot-starter-parent.version : 2.2.5.RELEASE
-+ dubbo.version : 2.7.3
-+ nacos-client.version : 1.1.1
-+ swagger.version : 2.9.2
-
-具体其他详细版本请参照dependencies模块
+```text
+java : 1.8.0_201
+spring-cloud.version : Hoxton.SR3
+spring-boot-starter-parent.version : 2.2.5.RELEASE
+dubbo.version : 2.7.3
+nacos-client.version : 1.1.1
+swagger.version : 2.9.2
+```
+具体其它详细版本请参照dependencies
 
 ### 项目模块
 ```text
@@ -56,7 +56,7 @@ dubbo:
   consumer:
     check: false
 ```
-**启动顺序可随意**
+**启动顺序可任意**
 
 ### Swagger 访问模块接口
 
@@ -104,7 +104,17 @@ dubbo:
 
 ---
 ### 日志
-*2020-02-04*
+*20200204*
 + 修改配置文件，关闭consumer自动检测provider
 + 对应修改readme相关说明
----
+
+*20200205*
++ 自定义security认证Exception Response
+```json
+{
+  "code": 4700,
+  "data": "",
+  "msg": "无效token"
+}
+```
+详细请参照AuthExceptionEntryPoint、CustomAccessDeniedHandler

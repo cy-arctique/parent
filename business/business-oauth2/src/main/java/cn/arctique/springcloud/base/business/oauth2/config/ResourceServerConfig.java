@@ -1,4 +1,4 @@
-package cn.arctique.springcloud.base.business.index.config;
+package cn.arctique.springcloud.base.business.oauth2.config;
 
 import cn.arctique.springcloud.base.common.config.oauth.AuthExceptionEntryPoint;
 import cn.arctique.springcloud.base.common.config.oauth.CustomAccessDeniedHandler;
@@ -15,7 +15,7 @@ import javax.annotation.Resource;
 
 /**
  * @author arctique
- * @date 2020/9/21 16:05
+ * @date 2021/2/5 9:18
  */
 @Configuration
 @EnableResourceServer
@@ -24,10 +24,10 @@ import javax.annotation.Resource;
 public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
 
     @Resource
-    private AuthExceptionEntryPoint authExceptionEntryPoint;
+    private CustomAccessDeniedHandler customAccessDeniedHandler;
 
     @Resource
-    private CustomAccessDeniedHandler customAccessDeniedHandler;
+    private AuthExceptionEntryPoint authExceptionEntryPoint;
 
     @Override
     public void configure(HttpSecurity http) throws Exception {
@@ -37,20 +37,12 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                 .and()
                 .authorizeRequests()
-                .antMatchers("/**").hasAuthority("USER")
-                .and().csrf().disable();
+                .antMatchers("/**").hasAuthority("USER");
     }
 
-
-    /**
-     * 资源服务器标识
-     *
-     * @param resources
-     * @throws Exception
-     */
     @Override
     public void configure(ResourceServerSecurityConfigurer resources) throws Exception {
-        resources.resourceId("oauth2-resources");
+        resources.resourceId("backend-resources");
         resources.authenticationEntryPoint(authExceptionEntryPoint)
                 .accessDeniedHandler(customAccessDeniedHandler);
     }

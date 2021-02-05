@@ -65,16 +65,23 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
         return super.authenticationManagerBean();
     }
 
+    /**
+     * 配置白名单路径
+     *
+     * @param web
+     * @throws Exception
+     */
     @Override
     public void configure(WebSecurity web) throws Exception {
         web.ignoring().antMatchers("/user/login",
                 "/v2/api-docs",
                 "/v2/api-docs-ext",
                 "/doc.html",
+                "/resources/**",
                 "/webjars/**",
                 "/swagger-resources/**",
-                "oauth/authorize",
-                "business-oauth2/**");
+                "/oauth/authorize",
+                "/business-oauth2/**");
     }
 
     /**

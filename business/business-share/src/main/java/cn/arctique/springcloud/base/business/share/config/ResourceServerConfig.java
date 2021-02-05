@@ -1,5 +1,8 @@
 package cn.arctique.springcloud.base.business.share.config;
 
+import cn.arctique.springcloud.base.common.config.oauth.AuthExceptionEntryPoint;
+import cn.arctique.springcloud.base.common.config.oauth.CustomAccessDeniedHandler;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -8,6 +11,8 @@ import org.springframework.security.oauth2.config.annotation.web.configuration.E
 import org.springframework.security.oauth2.config.annotation.web.configuration.ResourceServerConfigurerAdapter;
 import org.springframework.security.oauth2.config.annotation.web.configurers.ResourceServerSecurityConfigurer;
 
+import javax.annotation.Resource;
+
 /**
  * @author arctique
  * @date 2020/9/21 16:05
@@ -15,7 +20,14 @@ import org.springframework.security.oauth2.config.annotation.web.configurers.Res
 @Configuration
 @EnableResourceServer
 @EnableGlobalMethodSecurity(prePostEnabled = true, securedEnabled = true, jsr250Enabled = true)
+@ComponentScan("cn.arctique.springcloud.base.common.config.oauth")
 public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
+
+    @Resource
+    private AuthExceptionEntryPoint authExceptionEntryPoint;
+
+    @Resource
+    private CustomAccessDeniedHandler customAccessDeniedHandler;
 
     @Override
     public void configure(HttpSecurity http) throws Exception {
@@ -39,5 +51,7 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
     @Override
     public void configure(ResourceServerSecurityConfigurer resources) throws Exception {
         resources.resourceId("oauth2-resources");
+        resources.authenticationEntryPoint(authExceptionEntryPoint)
+                .accessDeniedHandler(customAccessDeniedHandler);
     }
 }
