@@ -37,3 +37,11 @@ dubbo:
 mybatis-plus:
   mapper-locations: classpath:/mapper/*.xml
   type-aliases-package: cn.arctique.springcloud.base.share.provider.api.pojo.*
+  # 控制台打印 sql语句
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  # 逻辑删除
+  global-config:
+    db-config:
+      logic-not-delete-value: 0
+      logic-delete-value: 1

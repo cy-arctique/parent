@@ -60,5 +60,11 @@
             <artifactId>common-util</artifactId>
             <version>${project.parent.version}</version>
         </dependency>
+
+        <!--mybatis-->
+        <dependency>
+            <groupId>com.baomidou</groupId>
+            <artifactId>mybatis-plus-boot-starter</artifactId>
+        </dependency>
     </dependencies>
 </project>

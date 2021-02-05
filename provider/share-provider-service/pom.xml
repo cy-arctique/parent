@@ -101,7 +101,7 @@
         </dependency>
         <dependency>
             <groupId>cn.arctique.springcloud-base</groupId>
-            <artifactId>common</artifactId>
+            <artifactId>common-config</artifactId>
             <version>${project.parent.version}</version>
         </dependency>
     </dependencies>
