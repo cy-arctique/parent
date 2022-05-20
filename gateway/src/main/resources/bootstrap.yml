@@ -1,0 +1,35 @@
+spring:
+  application:
+    name: gateway
+  main:
+    allow-bean-definition-overriding: true
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          # 是否开启，默认为 false 关闭
+          enabled: true
+      routes:
+
+        - id: business-share
+          uri: lb://business-share
+          predicates:
+            - Path=/business-share/**
+
+        - id: business-index
+          uri: lb://business-index
+          predicates:
+            - Path=/business-index/**
+
+        - id: business-oauth2
+          uri: lb://business-oauth2
+          predicates:
+            - Path=/business-oauth2/**
+
+    # 与 Spring Cloud 注册中心的集成，对应 DiscoveryLocatorProperties 类
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+server:
+  port: 9999
+
